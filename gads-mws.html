@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> GADS 1 </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link type="image/png" rel="icon" href="mortarboard.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudfare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            html, body{
+                margin: 0;
+                padding: 0;
+            }
+            header{
+                padding: 20px 70px;
+                background-color: whitesmoke;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            header ul{
+                margin-left: 400px;
+            }
+            header ul li{
+                margin: 0;
+                float: left;
+                list-style-type: none;
+                margin-right: 30px;
+                font-size: 11pt;
+                font-weight: 500;
+            }
+            header ul li a{
+                text-decoration: none;
+                color: black;
+            }
+            #logo-name{
+                float: left;
+                padding: 10px;
+                font-size: 18pt;
+                line-height: 15px;
+                font-weight: bolder;
+            }
+            header button{
+                cursor: pointer;
+                outline: none;
+                border: none;
+                color: white;
+                padding: 7px;
+                background-color: rgb(35, 35, 245);    
+                line-height: 10px;      
+                font-weight: 500;
+            }
+            input{
+                display: ;
+                
+            }
+            #menu-ham{
+                display: ;
+                cursor: pointer;
+            }
+
+            @media (max-width: 500px){
+                #nav ul{
+                    display: flex;
+                    flex-direction: column;
+                    position: fixed;
+                    top: 100px;
+                    background: whitesmoke;
+                    height: auto;
+                    align-items: center;
+                    transition: linear 1s right;
+                    width: 100%;
+                    right: -100%;
+                    color: black;
+                }
+                #menu-ham{
+                    display: block;
+                    text-align: center;
+                    width: 100px;
+                }
+                #menu-check:checked > ul{
+                    right: 0;
+                }
+            }
+
+            main{
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            #info{
+                text-align: center;
+                padding-top: 200px;
+                padding-bottom: 200px;
+                color: white;
+                margin-top: 0;
+                background-image: linear-gradient(rgb(63, 63, 107) , black 70%);
+            }
+            #info a{
+                color: grey;
+            }
+            #first{
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 24pt;
+                margin-bottom: 0;
+            }
+            #teachers{
+                padding: 80px;
+                background-color: whitesmoke;
+            }
+            #grids{
+                display: grid;
+                width: 100%;
+                grid-template-columns: auto auto auto auto; 
+                grid-gap: 30px;
+            }
+            @media (max-width: 1000px){
+                #grids{
+                    grid-template-columns: auto;
+                }
+            }
+            .picture{
+                height: 300px;
+                background-color: grey;
+            }
+            .describe{
+                text-align: center;
+                padding: 5px;
+                font-size: 11pt;
+                line-height: 1.5;
+            }
+            .staff{
+                font-size: 10pt;
+            }
+            .name{
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 14pt;
+                margin-top: 0;
+                margin-bottom: 0;
+                font-weight: 600;
+            }
+            #course-info{
+                background-color: rgb(65, 88, 74);
+                padding-top: 60px;
+                padding-bottom: 60px;
+                text-align: center;
+                color: white;
+            }
+            #course-info>p:first-child{
+                font-size: 18pt;
+                margin-bottom: 10px;
+                font-family: 'Times New Roman', Times, serif;
+            }
+            #name-by{
+                font-size: 14pt;
+                font-family: 'Times New Roman', Times, serif;
+                margin-top: 0;
+            }
+            #time-circles{
+                display: flex;
+                max-width: 400px;
+                margin: 0 auto;
+                text-align: center;
+                margin-top: 30px;
+                margin-bottom: 50px;
+            }
+            #time-circles div{
+                border: 2px solid white;
+                border-radius: 50%;
+                width: 90px;
+                height: 90px;
+                padding: 0;
+                text-align: center;
+                padding-top: 12px;
+                padding-bottom: 12px;
+                margin-right: 12px;                
+            }
+            #time-circles div:last-child{
+                margin-right: 0;
+            }
+            #time-circles p{
+                margin-top: 0;
+                margin-bottom: 5px;
+            }
+            #t1, #t2, #t3, #t4{
+                font-size: 9pt;
+                font-weight: bolder;
+            }
+            #ta, #tb, #tc{
+                font-size: 22pt;
+            }
+            #course-info button{
+                border: white solid 2px;
+                padding: 20px 50px;
+                background: transparent;
+                font-size: 9pt;
+                color: white;
+                font-weight: bolder;
+                cursor: pointer;
+                margin-bottom: 20px;
+            }
+            footer{
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: black;
+                color: white;
+                padding: 50px;
+                font-size: 10pt;
+            }
+            #grid2{
+                display: grid;
+                grid-template-columns: 300px auto;
+                grid-gap: 250px;
+            }
+            @media (max-width: 1000px){
+                #grid2{
+                    display: flex;
+                    flex-direction: column;
+                }
+                #about{
+                    text-align: center;
+                    max-width: 300px;
+                    margin: 0 auto;
+                }
+            }
+            #sub-grid{
+                display: grid;
+                grid-template-columns: 100px 130px 110px 110px;
+                grid-gap: 80px;
+                max-width: 700px;
+            }
+            .f-nav ul{
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+                font-size: 11pt;
+            }
+            .f-nav ul li{
+                margin-bottom: 7px;
+            }
+            .f-nav ul li a{
+                color: grey;
+                text-decoration: none;
+            }
+            #grid2 p{
+                font-weight: bolder;
+            }
+            #foot-note{
+                text-align: center;
+                margin-top: 100px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <header>
+            <input type="checkbox" name="" id="menu-check">
+            <div id="logo-name"><img src="mortarboard.png" alt="educ." style="width: 25px;"><span>EDUC.</span></div>
+            <div id="nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Teacher</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <button>Login</button></a>
+            <button>Create a Course</button></a>
+
+            <div id="menu-ham">
+                <label for="menu-check">
+                    <img src="circle&ham.png" alt="" style="width: 35px;">
+                </label>
+            </div>
+        </header>
+
+        <main>
+
+            <section id="info">
+                <p id="first">Our Faculty</p>
+                <p>Free html5 templates Made by <a href="https://freehtml5.co" target="_blank">freehtml5.co</a></p>
+            </section>
+
+            <section id="teachers">
+                <div id="grids">
+                    <div id="1">
+                        <div class="picture"></div>
+                        <div class="describe">
+                            <p class="staff">Health Teacher</p>
+                            <p class="name">Mike Smith</p>
+                            <p> I think the "Nulla ac una..." paragraph has been quite redundant 
+                                so I am using this :)
+                            </p>
+                        </div>
+                    </div>
+                    <div id="2">
+                        <div class="picture"></div>
+                        <div class="describe">
+                            <p class="staff">Health Teacher</p>
+                            <p class="name">Mike Smith</p>
+                            <p> I think the "Nulla ac una..." paragraph has been quite redundant 
+                                so I am using this :)
+                            </p>
+                        </div>
+                    </div>
+                    <div id="3">
+                        <div class="picture"></div>
+                        <div class="describe">
+                            <p class="staff">Health Teacher</p>
+                            <p class="name">Mike Smith</p>
+                            <p> I think the "Nulla ac una..." paragraph has been quite redundant 
+                                so I am using this :)
+                            </p>
+                        </div>
+                    </div>
+                    <div id="4">
+                        <div class="picture"></div>
+                        <div class="describe">
+                            <p class="staff">Health Teacher</p>
+                            <p class="name">Mike Smith</p>
+                            <p> I think the "Nulla ac una..." paragraph has been quite redundant 
+                                so I am using this :)
+                            </p>
+                        </div>
+                    </div>
+                    <div id="5">
+                        <div class="picture"></div>
+                        <div class="describe">
+                            <p class="staff">Health Teacher</p>
+                            <p class="name">Mike Smith</p>
+                            <p> I think the "Nulla ac una..." paragraph has been quite redundant 
+                                so I am using this :)
+                            </p>
+                        </div>
+                    </div>
+                    <div id="6">
+                        <div class="picture"></div>
+                        <div class="describe">
+                            <p class="staff">Health Teacher</p>
+                            <p class="name">Mike Smith</p>
+                            <p> I think the "Nulla ac una..." paragraph has been quite redundant 
+                                so I am using this :)
+                            </p>
+                        </div>
+                    </div>
+                    <div id="7">
+                        <div class="picture"></div>
+                        <div class="describe">
+                            <p class="staff">Health Teacher</p>
+                            <p class="name">Mike Smith</p>
+                            <p> I think the "Nulla ac una..." paragraph has been quite redundant 
+                                so I am using this :)
+                            </p>
+                        </div>
+                    </div>
+                    <div id="8">
+                        <div class="picture"></div>
+                        <div class="describe">
+                            <p class="staff">Health Teacher</p>
+                            <p class="name">Mike Smith</p>
+                            <p> I think the "Nulla ac una..." paragraph has been quite redundant 
+                                so I am using this :)
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="course-info">
+                <p>Get 400 of Online Courses for Free</p>
+                <p id="name-by">By Mike Smith</p>
+
+                <div id="time-circles">
+                    <div>
+                        <p id="ta">332</p><p id="t1">DAYS</p>
+                    </div>
+                    <div>
+                        <p id="tb">7</p><p id="t2">HOURS</p>
+                    </div>
+                    <div>
+                        <p id="tc">23</p><p id="t3">MINUTES</p>
+                    </div>
+                    <div>
+                        <p id="tc">26</p><p id="t4">SECONDS</p>
+                    </div>
+                </div>
+
+                <p style="font-weight: bolder; font-size: 11pt;">Limited Offer, Hurry Up!</p>
+                <button>REGISTER NOW!</button>
+
+            </section>
+
+        </main>
+
+        <footer>
+            <div id="grid2">
+                <div id="about">
+                    <p>ABOUT EDUCATION</p>
+                    <P style="font-weight: normal; line-height: 1.7;">Education is awesome. It brings to your doorstep, all that you need to learn, 
+                        know and grow. The "Facilis ipsum ... " paragraph wouldn't tell you this. 
+                        So this should be better :)
+                    </P>
+                </div>
+                
+
+                <div id="sub-grid">
+                <div>
+                    <p>LEARNING</p>
+                    <div class="f-nav">
+                            <ul>
+                                <li><a href="#">Course</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Contact</a></li>
+                                <li><a href="#">Terms</a></li>
+                                <li><a href="#">Meetups</a></li>
+                            </ul>
+                    </div>
+                </div>
+
+                <div>
+                <p>LEARN & GROW</p>
+                    <div class="f-nav">
+                        <ul>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                            <li><a href="#">Handbook</a></li>
+                            <li><a href="#">Help Desk</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                <p>ENGAGE US</p>
+                    <div class="f-nav">
+                        <ul>
+                            <li><a href="#">Marketing</a></li>
+                            <li><a href="#">Visual Assistant</a></li>
+                            <li><a href="#">System Analysis</a></li>
+                            <li><a href="#">Advertise</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                <p>LEGAL</p>
+                <div class="f-nav">
+                    <ul>
+                        <li><a href="#">Find Designers</a></li>
+                        <li><a href="#">Find Developers</a></li>
+                        <li><a href="#">Teams</a></li>
+                        <li><a href="#">Advertise</a></li>
+                        <li><a href="#">API</a></li>
+                    </ul>
+                </div>
+                </div>
+
+                </div>
+
+            </div>
+
+            <div id="foot-note">
+            <p style="margin-bottom: 5px;">&copy; 2016 Free HTML 5. All Rights Reserved.</p>
+            <p style="margin-top: 0;">Designed by 
+                <a href="freehtml5.co" target="_blank" style="text-decoration: none; color: grey;">
+                FreeHTML5.co
+                </a>. Icon made by <a href="https://www.flaticon.com/authors/zlatko-najdenovski" title="Zlatko Najdenovski" target="_blank" style="text-decoration: none; color: grey;">Zlatko Najdenovski</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank" style="text-decoration: none; color: grey;"> www.flaticon.com</a>
+            </p>
+            </div>
+
+        </footer>
+
+    </body>
+</html>
