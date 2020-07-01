@@ -52,6 +52,8 @@
                 background-color: rgb(35, 35, 245);    
                 line-height: 10px;      
                 font-weight: 500;
+                border-radius: 5px;
+                box-shadow: 0 0 5px grey;
             }
             input{
                 display: none;
@@ -64,7 +66,7 @@
 
             @media (max-width: 1000px){
                 header{
-                    padding: 30px 30px 30px 70px;
+                    padding: 30px;
 
                 }
                 #logo-name{
@@ -87,6 +89,7 @@
                 #nav ul li{
                     margin-bottom: 10px;
                     font-weight: bolder;
+                    font-size: 14pt;
                 }
                 #nav ul li a{
                     color: white;
@@ -97,10 +100,17 @@
                     text-align: center;
                     width: 100px;
                     top: 30px;
-                    left: 0;
+                    right: 0;
                 }
                 #menu-check:checked~#nav-key{
                     right: 5px;
+                }
+                header button{
+                    display: block;
+                    margin-bottom: 10px;
+                }
+                header button:last-child{
+                    margin-bottom: 0;
                 }
             }
 
@@ -139,6 +149,9 @@
                 grid-gap: 30px;
             }
             @media (max-width: 1000px){
+                #teachers{
+                    padding: 30px;
+                }
                 #grids{
                     grid-template-columns: auto;
                 }
@@ -315,7 +328,7 @@
 
             <div id="menu-ham">
                 <label for="menu-check">
-                    <img src="circle&ham.png" alt="" style="width: 35px;">
+                    <img src="circle&ham.png" alt="" style="width: 60px;">
                 </label>
             </div>
         </header>
@@ -515,8 +528,11 @@
             <p style="margin-top: 0;">Designed by 
                 <a href="freehtml5.co" target="_blank" style="text-decoration: none; color: grey;">
                 FreeHTML5.co
-                </a>. Icon made by <a href="https://www.flaticon.com/authors/zlatko-najdenovski" title="Zlatko Najdenovski" target="_blank" style="text-decoration: none; color: grey;">Zlatko Najdenovski</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank" style="text-decoration: none; color: grey;"> www.flaticon.com</a>
+                </a>. Re-designed by Sodiq Farhan. Checkout my GitHub profile <a href="https://www.github.com/Farhan001" target="_blank" style="text-decoration: none; color: grey;">here.</a>
             </p>
+            <p>Icon made by <a href="https://www.flaticon.com/authors/zlatko-najdenovski" title="Zlatko Najdenovski" target="_blank" style="text-decoration: none; color: grey;">Zlatko Najdenovski</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank" style="text-decoration: none; color: grey;"> www.flaticon.com</a>
+            </p>
+
             </div>
 
         </footer>
