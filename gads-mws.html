@@ -5,7 +5,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link type="image/png" rel="icon" href="mortarboard.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudfare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
             *{
                 box-sizing: border-box;
@@ -220,12 +219,30 @@
                     max-width: 300px;
                     margin: 0 auto;
                 }
+                #sub-grid{
+                    grid-template-columns: auto auto;
+                    grid-template-areas: 
+                    " info1 info2"
+                    "info3 info4";
+                }
+                #sub-grid1{
+                    grid-area: info1;
+                }
+                #sub-grid2{
+                    grid-area: info2;
+                }
+                #sub-grid3{
+                    grid-area: info3;
+                }
+                #sub-grid4{
+                    grid-area: info4;
+                }
+                
             }
             #sub-grid{
                 display: grid;
                 grid-template-columns: 100px 130px 110px 110px;
                 grid-gap: 80px;
-                max-width: 700px;
             }
             .f-nav ul{
                 margin: 0;
@@ -406,7 +423,8 @@
                 
 
                 <div id="sub-grid">
-                <div>
+                
+                <div id="sub-grid1">
                     <p>LEARNING</p>
                     <div class="f-nav">
                             <ul>
@@ -419,7 +437,7 @@
                     </div>
                 </div>
 
-                <div>
+                <div id="sub-grid2">
                 <p>LEARN & GROW</p>
                     <div class="f-nav">
                         <ul>
@@ -431,8 +449,10 @@
                         </ul>
                     </div>
                 </div>
+                
 
-                <div>
+                
+                <div id="sub-grid3">
                 <p>ENGAGE US</p>
                     <div class="f-nav">
                         <ul>
@@ -444,7 +464,7 @@
                     </div>
                 </div>
 
-                <div>
+                <div id="sub-grid4">
                 <p>LEGAL</p>
                 <div class="f-nav">
                     <ul>
@@ -456,6 +476,7 @@
                     </ul>
                 </div>
                 </div>
+                
 
                 </div>
 
