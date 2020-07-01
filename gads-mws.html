@@ -33,6 +33,9 @@
                 text-decoration: none;
                 color: black;
             }
+            header ul li a:hover{
+                border-bottom: solid 3px rgb(59, 59, 201);
+            }
             #logo-name{
                 float: left;
                 padding: 10px;
@@ -51,35 +54,53 @@
                 font-weight: 500;
             }
             input{
-                display: ;
+                display: none;
                 
             }
             #menu-ham{
-                display: ;
+                display: none;
                 cursor: pointer;
             }
 
-            @media (max-width: 500px){
+            @media (max-width: 1000px){
+                header{
+                    padding: 30px 30px 30px 70px;
+
+                }
+                #logo-name{
+                    margin-right: 100px;
+                }
                 #nav ul{
                     display: flex;
                     flex-direction: column;
                     position: fixed;
                     top: 100px;
-                    background: whitesmoke;
+                    background: grey;
                     height: auto;
                     align-items: center;
                     transition: linear 1s right;
-                    width: 100%;
+                    width: 250px;
                     right: -100%;
-                    color: black;
+                    padding: 20px;
+                    border-radius: 10px;
+                }
+                #nav ul li{
+                    margin-bottom: 10px;
+                    font-weight: bolder;
+                }
+                #nav ul li a{
+                    color: white;
                 }
                 #menu-ham{
+                    position: absolute;
                     display: block;
                     text-align: center;
                     width: 100px;
+                    top: 30px;
+                    left: 0;
                 }
-                #menu-check:checked > ul{
-                    right: 0;
+                #menu-check:checked~#nav-key{
+                    right: 5px;
                 }
             }
 
@@ -93,6 +114,11 @@
                 color: white;
                 margin-top: 0;
                 background-image: linear-gradient(rgb(63, 63, 107) , black 70%);
+            }
+            @media (max-width: 500px){
+                #info{
+                    padding: 200px 20px;
+                }
             }
             #info a{
                 color: grey;
@@ -129,6 +155,7 @@
             }
             .staff{
                 font-size: 10pt;
+                color: grey;
             }
             .name{
                 font-family: 'Times New Roman', Times, serif;
@@ -269,10 +296,11 @@
     <body>
 
         <header>
-            <input type="checkbox" name="" id="menu-check">
+            
             <div id="logo-name"><img src="mortarboard.png" alt="educ." style="width: 25px;"><span>EDUC.</span></div>
             <div id="nav">
-                <ul>
+                <input type="checkbox" name="" id="menu-check">
+                <ul id="nav-key">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Courses</a></li>
                     <li><a href="#">Teacher</a></li>
@@ -296,7 +324,7 @@
 
             <section id="info">
                 <p id="first">Our Faculty</p>
-                <p>Free html5 templates Made by <a href="https://freehtml5.co" target="_blank">freehtml5.co</a></p>
+                <p>Free html5 templates Made by <a href="https://freehtml5.co" target="_blank" style="text-decoration: none;">freehtml5.co</a></p>
             </section>
 
             <section id="teachers">
@@ -312,7 +340,7 @@
                         </div>
                     </div>
                     <div id="2">
-                        <div class="picture"></div>
+                        <div class="picture" style="background: rgb(235, 228, 215);"></div>
                         <div class="describe">
                             <p class="staff">Health Teacher</p>
                             <p class="name">Mike Smith</p>
@@ -362,7 +390,7 @@
                         </div>
                     </div>
                     <div id="7">
-                        <div class="picture"></div>
+                        <div class="picture" style="background: rgb(235, 228, 215);"></div>
                         <div class="describe">
                             <p class="staff">Health Teacher</p>
                             <p class="name">Mike Smith</p>
